@@ -1,0 +1,21 @@
+{
+  "name": "Cambi Turno",
+  "short_name": "Cambi Turno",
+  "description": "Ricerca chi svolge un turno nella settimana selezionata.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

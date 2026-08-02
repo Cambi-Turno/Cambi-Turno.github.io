@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://cambi-turno-backend-test.antonio-mauceri82.workers.dev; object-src 'none'; base-uri 'none'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Cambi Turno">
+  <title>Cambi Turno</title>
+  <meta name="description" content="Ricerca chi svolge un turno nella settimana selezionata.">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cambi-turno-backend-test.antonio-mauceri82.workers.dev" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=protected2">
+</head>
+<body class="locked">
+<section id="accessGate" class="access-gate" aria-labelledby="accessTitle">
+  <div class="access-card">
+    <h1 id="accessTitle">Inserisci la tua matricola</h1>
+    <p>Accesso riservato ai lavoratori</p>
+    <form id="accessForm" class="access-form">
+      <input id="matricola" type="text" inputmode="numeric" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Matricola" aria-label="Matricola" required>
+      <button type="submit">Entra</button>
+      <p id="accessError" class="access-error" role="alert" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<main>
+  <div class="shell">
+    <section class="intro">
+      <div class="union-names" aria-label="Organizzazioni sindacali">
+        <span class="union-chip filt"><i></i>FILT CGIL</span>
+        <span class="union-chip fit"><i></i>FIT CISL</span>
+        <span class="union-chip uil"><i></i>UIL TRASPORTI</span>
+        <span class="union-chip faisa"><i></i>FAISA CISAL</span>
+        <span class="union-chip ugl"><i></i>UGL</span>
+      </div>
+      <div class="tricolore-line" aria-hidden="true"></div>
+      <h1>Cambi Turno</h1>
+      <p class="residence-name">Residenza di Massa</p>
+      <p class="eyebrow">Estate 2026</p>
+    </section>
+    <form class="search-card">
+      <div class="mode-switch" role="group" aria-label="Tipo di ricerca">
+        <button type="button" class="mode-button active" data-mode="number">Turni</button>
+        <button type="button" class="mode-button" data-mode="category">Tipo turno</button>
+      </div>
+      <label id="numberField"><span>Cerca uno o più turni</span><span class="turn-input-shell"><input id="turno" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" spellcheck="false" placeholder="Es. 07, 22, 69" aria-label="Numero o sigla turno"><span id="turnValidIndicator" class="turn-valid-indicator" aria-label="Turno riconosciuto" title="Turno riconosciuto">✓</span></span></label>
+      <label id="categoryField" hidden><span>Tipo turno</span><select id="category" aria-label="Tipo turno"><option>Mattina</option><option>Pomeriggio</option><option>Spezzato</option><option>Serale</option></select></label>
+      <label class="date-label"><span>Data interessata</span><span class="date-shell"><span class="date-content" aria-hidden="true"><span id="dateDisplay" class="date-display"></span><small id="todayHint" class="today-hint" hidden>OGGI</small></span><input id="date" type="date" min="2026-06-08" aria-label="Data interessata"></span><small id="range"></small></label>
+      <label><span>Periodo</span><select id="period" aria-label="Periodo"><option value="day">Solo il giorno selezionato</option><option value="week">Tutta la settimana</option></select></label>
+      <button class="search-button" type="submit"><span class="lens" aria-hidden="true"></span>Cerca</button>
+    </form>
+    <section id="results" class="results" aria-live="polite"></section>
+  </div>
+
+  <footer class="site-footer">
+    <span>© 2026 Coordinamento sindacale – Residenza di Massa</span>
+    <button id="adminGear" class="admin-gear" type="button" aria-label="Apri statistiche" title="Statistiche" hidden>⚙︎</button>
+  </footer>
+  <section id="statsModal" class="stats-modal" role="dialog" aria-modal="true" aria-labelledby="statsTitle" hidden>
+    <div class="stats-panel">
+      <div class="stats-header">
+        <h2 id="statsTitle">Statistiche</h2>
+        <button id="statsClose" class="stats-close" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <form id="statsLogin" class="stats-login">
+        <label>
+          <span>Codice riservato</span>
+          <input id="statsPin" type="password" inputmode="numeric" autocomplete="current-password" placeholder="Inserisci il codice" required>
+        </label>
+        <button type="submit">Visualizza</button>
+        <p id="statsMessage" class="stats-message" aria-live="polite"></p>
+      </form>
+      <div id="statsContent" class="stats-grid" hidden>
+        <h3 class="stats-period">Oggi</h3>
+        <div class="stat-box"><strong id="viewsToday">0</strong><span>Visualizzazioni</span></div>
+        <div class="stat-box"><strong id="visitsToday">0</strong><span>Visite</span></div>
+        <h3 class="stats-period">Ultimi 7 giorni</h3>
+        <div class="stat-box"><strong id="views7">0</strong><span>Visualizzazioni</span></div>
+        <div class="stat-box"><strong id="visits7">0</strong><span>Visite</span></div>
+        <h3 class="stats-period">Ultimi 30 giorni</h3>
+        <div class="stat-box"><strong id="views30">0</strong><span>Visualizzazioni</span></div>
+        <div class="stat-box"><strong id="visits30">0</strong><span>Visite</span></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+<script src="/app.js?v=protected2"></script>
+</body>
+</html>
