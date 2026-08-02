@@ -56,13 +56,16 @@ const accessForm=document.querySelector("#accessForm");
 const matricolaInput=document.querySelector("#matricola");
 const accessError=document.querySelector("#accessError");
 const adminGear=document.querySelector("#adminGear");
-const projectInfoButton=document.querySelector("#projectInfoButton");
+const infoMenuButton=document.querySelector("#infoMenuButton");
+const infoMenuModal=document.querySelector("#infoMenuModal");
+const infoMenuClose=document.querySelector("#infoMenuClose");
+const infoProjectButton=document.querySelector("#infoProjectButton");
+const infoPrivacyButton=document.querySelector("#infoPrivacyButton");
+const infoRulesButton=document.querySelector("#infoRulesButton");
 const projectModal=document.querySelector("#projectModal");
 const projectClose=document.querySelector("#projectClose");
-const privacyInfoButton=document.querySelector("#privacyInfoButton");
 const privacyModal=document.querySelector("#privacyModal");
 const privacyClose=document.querySelector("#privacyClose");
-const rulesInfoButton=document.querySelector("#rulesInfoButton");
 const rulesModal=document.querySelector("#rulesModal");
 const rulesClose=document.querySelector("#rulesClose");
 const statsModal=document.querySelector("#statsModal");
@@ -190,10 +193,21 @@ async function recordAnonymousVisit(){
     await apiRequest("/event",{newSession},{keepalive:true});
   }catch(error){}
 }
+function closeInfoMenu(){
+  infoMenuModal.hidden=true;
+}
+infoMenuButton.addEventListener("click",()=>{
+  infoMenuModal.hidden=false;
+  setTimeout(()=>infoMenuClose.focus(),50);
+});
+infoMenuClose.addEventListener("click",closeInfoMenu);
+infoMenuModal.addEventListener("click",event=>{if(event.target===infoMenuModal) closeInfoMenu();});
+
 function closeProject(){
   projectModal.hidden=true;
 }
-projectInfoButton.addEventListener("click",()=>{
+infoProjectButton.addEventListener("click",()=>{
+  closeInfoMenu();
   projectModal.hidden=false;
   setTimeout(()=>projectClose.focus(),50);
 });
@@ -202,7 +216,8 @@ projectModal.addEventListener("click",event=>{if(event.target===projectModal) cl
 function closePrivacy(){
   privacyModal.hidden=true;
 }
-privacyInfoButton.addEventListener("click",()=>{
+infoPrivacyButton.addEventListener("click",()=>{
+  closeInfoMenu();
   privacyModal.hidden=false;
   setTimeout(()=>privacyClose.focus(),50);
 });
@@ -211,7 +226,8 @@ privacyModal.addEventListener("click",event=>{if(event.target===privacyModal) cl
 function closeRules(){
   rulesModal.hidden=true;
 }
-rulesInfoButton.addEventListener("click",()=>{
+infoRulesButton.addEventListener("click",()=>{
+  closeInfoMenu();
   rulesModal.hidden=false;
   setTimeout(()=>rulesClose.focus(),50);
 });
@@ -237,6 +253,7 @@ statsClose.addEventListener("click",closeStats);
 statsModal.addEventListener("click",event=>{if(event.target===statsModal) closeStats();});
 document.addEventListener("keydown",event=>{
   if(event.key!=="Escape") return;
+  if(!infoMenuModal.hidden) closeInfoMenu();
   if(!projectModal.hidden) closeProject();
   if(!privacyModal.hidden) closePrivacy();
   if(!rulesModal.hidden) closeRules();
