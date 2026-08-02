@@ -59,6 +59,9 @@ const adminGear=document.querySelector("#adminGear");
 const projectInfoButton=document.querySelector("#projectInfoButton");
 const projectModal=document.querySelector("#projectModal");
 const projectClose=document.querySelector("#projectClose");
+const privacyInfoButton=document.querySelector("#privacyInfoButton");
+const privacyModal=document.querySelector("#privacyModal");
+const privacyClose=document.querySelector("#privacyClose");
 const statsModal=document.querySelector("#statsModal");
 const statsClose=document.querySelector("#statsClose");
 const statsLogin=document.querySelector("#statsLogin");
@@ -193,6 +196,15 @@ projectInfoButton.addEventListener("click",()=>{
 });
 projectClose.addEventListener("click",closeProject);
 projectModal.addEventListener("click",event=>{if(event.target===projectModal) closeProject();});
+function closePrivacy(){
+  privacyModal.hidden=true;
+}
+privacyInfoButton.addEventListener("click",()=>{
+  privacyModal.hidden=false;
+  setTimeout(()=>privacyClose.focus(),50);
+});
+privacyClose.addEventListener("click",closePrivacy);
+privacyModal.addEventListener("click",event=>{if(event.target===privacyModal) closePrivacy();});
 
 function closeStats(){
   statsModal.hidden=true;
@@ -214,6 +226,7 @@ statsModal.addEventListener("click",event=>{if(event.target===statsModal) closeS
 document.addEventListener("keydown",event=>{
   if(event.key!=="Escape") return;
   if(!projectModal.hidden) closeProject();
+  if(!privacyModal.hidden) closePrivacy();
   if(!statsModal.hidden) closeStats();
 });
 statsLogin.addEventListener("submit",async event=>{
