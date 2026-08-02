@@ -937,3 +937,19 @@ footer { color: #65756b; }
     font-size: 15px;
   }
 }
+
+
+/* Informativa privacy */
+.privacy-panel {
+  max-height: min(86vh, 760px);
+  overflow-y: auto;
+}
+.privacy-copy h3 {
+  margin: 8px 0 -8px;
+  color: var(--green);
+  font-size: 15px;
+  line-height: 1.25;
+}
+.privacy-copy h3:first-child {
+  margin-top: 0;
+}
