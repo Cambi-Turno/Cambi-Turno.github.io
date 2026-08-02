@@ -18,7 +18,7 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://cambi-turno-backend-test.antonio-mauceri82.workers.dev" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=protected4">
+  <link rel="stylesheet" href="/styles.css?v=protected5">
 </head>
 <body class="locked">
 <section id="accessGate" class="access-gate" aria-labelledby="accessTitle">
@@ -67,6 +67,8 @@
     <button id="projectInfoButton" class="footer-link" type="button">Il progetto</button>
     <span class="footer-separator" aria-hidden="true">·</span>
     <button id="privacyInfoButton" class="footer-link" type="button">Privacy</button>
+    <span class="footer-separator" aria-hidden="true">·</span>
+    <button id="rulesInfoButton" class="footer-link" type="button">Regole d’uso</button>
     <button id="adminGear" class="admin-gear" type="button" aria-label="Apri statistiche" title="Statistiche" hidden>⚙︎</button>
   </footer>
 
@@ -115,6 +117,25 @@
     </div>
   </section>
 
+  <section id="rulesModal" class="stats-modal project-modal" role="dialog" aria-modal="true" aria-labelledby="rulesTitle" hidden>
+    <div class="stats-panel project-panel">
+      <div class="stats-header">
+        <h2 id="rulesTitle">Regole d’uso</h2>
+        <button id="rulesClose" class="stats-close" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <div class="project-copy">
+        <ol class="rules-list">
+          <li>Il sito è riservato ai lavoratori autorizzati.</li>
+          <li>È vietato condividere matricole, collegamenti o contenuti del sito con persone esterne.</li>
+          <li>Le informazioni sono destinate esclusivamente alla ricerca volontaria dei cambi turno tra colleghi.</li>
+          <li>È vietato riutilizzare nomi e turni per finalità diverse da quelle previste dal progetto.</li>
+          <li>Eventuali errori, abusi o accessi non autorizzati devono essere segnalati ai rappresentanti sindacali promotori.</li>
+          <li>In caso di utilizzo improprio, l’accesso al sito potrà essere sospeso.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
   <section id="statsModal" class="stats-modal" role="dialog" aria-modal="true" aria-labelledby="statsTitle" hidden>
     <div class="stats-panel">
       <div class="stats-header">
@@ -144,6 +165,6 @@
   </section>
 
 </main>
-<script src="/app.js?v=protected4"></script>
+<script src="/app.js?v=protected5"></script>
 </body>
 </html>
