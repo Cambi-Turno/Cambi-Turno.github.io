@@ -18,7 +18,7 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://cambi-turno-backend-test.antonio-mauceri82.workers.dev" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=protected2">
+  <link rel="stylesheet" href="/styles.css?v=protected3">
 </head>
 <body class="locked">
 <section id="accessGate" class="access-gate" aria-labelledby="accessTitle">
@@ -62,9 +62,26 @@
   </div>
 
   <footer class="site-footer">
-    <span>© 2026 Coordinamento sindacale – Residenza di Massa</span>
+    <span>© 2026 Coordinamento sindacale · Residenza di Massa</span>
+    <span class="footer-separator" aria-hidden="true">·</span>
+    <button id="projectInfoButton" class="footer-link" type="button">Il progetto</button>
     <button id="adminGear" class="admin-gear" type="button" aria-label="Apri statistiche" title="Statistiche" hidden>⚙︎</button>
   </footer>
+
+  <section id="projectModal" class="stats-modal project-modal" role="dialog" aria-modal="true" aria-labelledby="projectTitle" hidden>
+    <div class="stats-panel project-panel">
+      <div class="stats-header">
+        <h2 id="projectTitle">Il progetto</h2>
+        <button id="projectClose" class="stats-close" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <div class="project-copy">
+        <p>Cambi Turno è un progetto sperimentale promosso congiuntamente dalle cinque rappresentanze sindacali della Residenza di Massa.</p>
+        <p>La gestione è collegiale.</p>
+        <p>Il sito serve esclusivamente ad agevolare la ricerca dei cambi turno tra colleghi e non costituisce uno strumento ufficiale dell’azienda.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="statsModal" class="stats-modal" role="dialog" aria-modal="true" aria-labelledby="statsTitle" hidden>
     <div class="stats-panel">
       <div class="stats-header">
@@ -94,6 +111,6 @@
   </section>
 
 </main>
-<script src="/app.js?v=protected2"></script>
+<script src="/app.js?v=protected3"></script>
 </body>
 </html>
