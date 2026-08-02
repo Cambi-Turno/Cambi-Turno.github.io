@@ -1030,3 +1030,28 @@ footer { color: #65756b; }
     padding-bottom: max(30px, calc(env(safe-area-inset-bottom) + 18px));
   }
 }
+
+
+/* Firma sopra, informazioni discrete sotto */
+.info-menu-button {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 5px 2px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #94a29a;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.info-menu-button:hover {
+  color: var(--green);
+  transform: none;
+  filter: none;
+}
