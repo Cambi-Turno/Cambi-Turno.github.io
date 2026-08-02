@@ -56,6 +56,9 @@ const accessForm=document.querySelector("#accessForm");
 const matricolaInput=document.querySelector("#matricola");
 const accessError=document.querySelector("#accessError");
 const adminGear=document.querySelector("#adminGear");
+const projectInfoButton=document.querySelector("#projectInfoButton");
+const projectModal=document.querySelector("#projectModal");
+const projectClose=document.querySelector("#projectClose");
 const statsModal=document.querySelector("#statsModal");
 const statsClose=document.querySelector("#statsClose");
 const statsLogin=document.querySelector("#statsLogin");
@@ -181,6 +184,16 @@ async function recordAnonymousVisit(){
     await apiRequest("/event",{newSession},{keepalive:true});
   }catch(error){}
 }
+function closeProject(){
+  projectModal.hidden=true;
+}
+projectInfoButton.addEventListener("click",()=>{
+  projectModal.hidden=false;
+  setTimeout(()=>projectClose.focus(),50);
+});
+projectClose.addEventListener("click",closeProject);
+projectModal.addEventListener("click",event=>{if(event.target===projectModal) closeProject();});
+
 function closeStats(){
   statsModal.hidden=true;
   statsPin.value="";
@@ -198,7 +211,11 @@ adminGear.addEventListener("click",()=>{
 });
 statsClose.addEventListener("click",closeStats);
 statsModal.addEventListener("click",event=>{if(event.target===statsModal) closeStats();});
-document.addEventListener("keydown",event=>{if(event.key==="Escape"&&!statsModal.hidden) closeStats();});
+document.addEventListener("keydown",event=>{
+  if(event.key!=="Escape") return;
+  if(!projectModal.hidden) closeProject();
+  if(!statsModal.hidden) closeStats();
+});
 statsLogin.addEventListener("submit",async event=>{
   event.preventDefault();
   statsMessage.classList.remove("error");
