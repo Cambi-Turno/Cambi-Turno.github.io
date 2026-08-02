@@ -981,3 +981,52 @@ footer { color: #65756b; }
     gap: 7px;
   }
 }
+
+
+/* Menu informativo compatto e lontano dal gesto Home di iPhone */
+.info-menu-button {
+  width: auto;
+  height: 38px;
+  min-height: 0;
+  margin: 0;
+  padding: 0 16px;
+  border: 1px solid #2a3a31;
+  border-radius: 999px;
+  background: #0d120f;
+  color: #94a29a;
+  box-shadow: none;
+  font-size: 13px;
+  font-weight: 750;
+}
+.info-menu-button:hover {
+  color: var(--green);
+  transform: none;
+  filter: none;
+}
+.info-menu-list {
+  display: grid;
+  gap: 10px;
+}
+.info-menu-list button {
+  width: 100%;
+  height: 54px;
+  min-height: 0;
+  margin: 0;
+  border: 1px solid #2a3a31;
+  background: #101712;
+  color: var(--text);
+  font-size: 16px;
+}
+.info-menu-list button:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.site-footer {
+  padding-bottom: max(26px, calc(env(safe-area-inset-bottom) + 16px));
+}
+@media (max-width: 760px) {
+  .site-footer {
+    margin-top: 16px;
+    padding-bottom: max(30px, calc(env(safe-area-inset-bottom) + 18px));
+  }
+}
