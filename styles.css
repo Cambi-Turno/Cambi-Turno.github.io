@@ -882,3 +882,58 @@ footer { color: #65756b; }
 }
 
 
+
+
+/* Informazioni sul progetto nel piè di pagina */
+.site-footer .footer-separator {
+  color: #46564d;
+}
+.site-footer .footer-link {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 4px 2px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #94a29a;
+  box-shadow: none;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.site-footer .footer-link:hover {
+  color: var(--green);
+  transform: none;
+  filter: none;
+}
+.project-panel {
+  width: min(92vw, 520px);
+}
+.project-copy {
+  display: grid;
+  gap: 16px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.project-copy p {
+  margin: 0;
+}
+@media (max-width: 760px) {
+  .site-footer {
+    gap: 6px;
+    white-space: normal;
+    flex-wrap: wrap;
+    line-height: 1.25;
+  }
+  .project-panel {
+    width: min(94vw, 520px);
+  }
+  .project-copy {
+    font-size: 15px;
+  }
+}
