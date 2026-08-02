@@ -1055,3 +1055,40 @@ footer { color: #65756b; }
   transform: none;
   filter: none;
 }
+
+
+/* Footer definitivo su una sola riga */
+.site-footer {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 6px;
+  white-space: nowrap;
+}
+.site-footer .footer-signature,
+.site-footer .footer-separator {
+  display: inline;
+  white-space: nowrap;
+}
+.site-footer .info-menu-button {
+  width: auto;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  padding: 3px 1px;
+  border: 0;
+  background: transparent;
+  color: #94a29a;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .site-footer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 5px;
+    white-space: nowrap;
+  }
+}
