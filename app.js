@@ -205,6 +205,8 @@ infoMenuModal.addEventListener("click",event=>{if(event.target===infoMenuModal) 
 
 function closeProject(){
   projectModal.hidden=true;
+  infoMenuModal.hidden=false;
+  setTimeout(()=>infoProjectButton.focus(),50);
 }
 infoProjectButton.addEventListener("click",()=>{
   closeInfoMenu();
@@ -215,6 +217,8 @@ projectClose.addEventListener("click",closeProject);
 projectModal.addEventListener("click",event=>{if(event.target===projectModal) closeProject();});
 function closePrivacy(){
   privacyModal.hidden=true;
+  infoMenuModal.hidden=false;
+  setTimeout(()=>infoPrivacyButton.focus(),50);
 }
 infoPrivacyButton.addEventListener("click",()=>{
   closeInfoMenu();
@@ -225,6 +229,8 @@ privacyClose.addEventListener("click",closePrivacy);
 privacyModal.addEventListener("click",event=>{if(event.target===privacyModal) closePrivacy();});
 function closeRules(){
   rulesModal.hidden=true;
+  infoMenuModal.hidden=false;
+  setTimeout(()=>infoRulesButton.focus(),50);
 }
 infoRulesButton.addEventListener("click",()=>{
   closeInfoMenu();
