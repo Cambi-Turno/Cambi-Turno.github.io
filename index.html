@@ -18,7 +18,7 @@
   <link rel="icon" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://cambi-turno-backend-test.antonio-mauceri82.workers.dev" crossorigin>
-  <link rel="stylesheet" href="/styles.css?v=protected3">
+  <link rel="stylesheet" href="/styles.css?v=protected4">
 </head>
 <body class="locked">
 <section id="accessGate" class="access-gate" aria-labelledby="accessTitle">
@@ -65,6 +65,8 @@
     <span>© 2026 Coordinamento sindacale · Residenza di Massa</span>
     <span class="footer-separator" aria-hidden="true">·</span>
     <button id="projectInfoButton" class="footer-link" type="button">Il progetto</button>
+    <span class="footer-separator" aria-hidden="true">·</span>
+    <button id="privacyInfoButton" class="footer-link" type="button">Privacy</button>
     <button id="adminGear" class="admin-gear" type="button" aria-label="Apri statistiche" title="Statistiche" hidden>⚙︎</button>
   </footer>
 
@@ -78,6 +80,37 @@
         <p>Cambi Turno è un progetto sperimentale promosso congiuntamente dalle cinque rappresentanze sindacali della Residenza di Massa.</p>
         <p>La gestione è collegiale.</p>
         <p>Il sito serve esclusivamente ad agevolare la ricerca dei cambi turno tra colleghi e non costituisce uno strumento ufficiale dell’azienda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacyModal" class="stats-modal project-modal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" hidden>
+    <div class="stats-panel project-panel privacy-panel">
+      <div class="stats-header">
+        <h2 id="privacyTitle">Informativa sulla privacy</h2>
+        <button id="privacyClose" class="stats-close" type="button" aria-label="Chiudi">×</button>
+      </div>
+      <div class="project-copy privacy-copy">
+        <h3>Titolari del trattamento</h3>
+        <p>Le cinque rappresentanze sindacali promotrici del progetto — FILT CGIL, FIT CISL, UIL Trasporti, FAISA CISAL e UGL della Residenza di Massa — gestiscono collegialmente il trattamento dei dati connesso al funzionamento del sito.</p>
+
+        <h3>Finalità</h3>
+        <p>Il trattamento è effettuato esclusivamente per verificare che l’accesso provenga da un lavoratore autorizzato e per consentire la ricerca dei cambi turno tra colleghi. I dati non sono utilizzati per finalità commerciali, pubblicitarie o di profilazione.</p>
+
+        <h3>Modalità</h3>
+        <p>La matricola inserita viene trasformata sul dispositivo in un codice crittografico prima della verifica e non viene conservata in chiaro nel database del sito. Le informazioni relative ai nominativi e ai turni sono consultabili soltanto dopo il superamento della verifica di accesso. Sono adottate misure tecniche dirette a limitare accessi e utilizzi non autorizzati.</p>
+
+        <h3>Destinatari tecnici</h3>
+        <p>Per il funzionamento della piattaforma sono utilizzati GitHub Pages, per la pubblicazione dell’interfaccia del sito, e Cloudflare, per i servizi di verifica, elaborazione e database. Tali fornitori possono trattare i dati tecnici necessari all’erogazione e alla sicurezza dei rispettivi servizi secondo le proprie condizioni e informative.</p>
+
+        <h3>Conservazione</h3>
+        <p>Le informazioni relative alle rotazioni sono mantenute per il tempo necessario al funzionamento del progetto e aggiornate o rimosse con il cambiamento delle rotazioni. I dati necessari alla verifica dell’accesso sono conservati fino alla cessazione del progetto o dell’autorizzazione del lavoratore. Le statistiche del sito sono aggregate e non sono utilizzate per identificare i singoli utenti.</p>
+
+        <h3>Diritti</h3>
+        <p>Ogni interessato può chiedere accesso, rettifica, cancellazione, limitazione o opposizione al trattamento dei propri dati rivolgendosi a uno dei cinque rappresentanti sindacali promotori attraverso i consueti recapiti sindacali. Resta salva la possibilità di proporre reclamo al Garante per la protezione dei dati personali.</p>
+
+        <h3>Natura sperimentale</h3>
+        <p>Cambi Turno è un progetto sperimentale, non costituisce uno strumento ufficiale dell’azienda ed è destinato esclusivamente ad agevolare la ricerca dei cambi turno tra colleghi.</p>
       </div>
     </div>
   </section>
@@ -111,6 +144,6 @@
   </section>
 
 </main>
-<script src="/app.js?v=protected3"></script>
+<script src="/app.js?v=protected4"></script>
 </body>
 </html>
